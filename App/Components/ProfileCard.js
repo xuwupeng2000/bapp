@@ -20,11 +20,15 @@ export default class ProfileCard extends Component {
     return (
       <View style={styles.container}>
         <RkCard>
-          <RkText>Name</RkText>
-          <RkText>Descripiton</RkText>
-          <RkButton onPress={this.props.onPressed}>
-            Book
-          </RkButton>
+          <View rkCardContent>
+            <RkText>Name</RkText>
+            <RkText>Descripiton</RkText>
+          </View>
+          <View rkCardFooter>
+            <RkButton style={styles.fullWidthButton} onPress={this.props.onPressed}>
+              Make an appointment
+            </RkButton>
+          </View>
         </RkCard>
       </View>
     )
