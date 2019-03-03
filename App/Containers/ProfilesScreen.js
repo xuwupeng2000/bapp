@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
+import ProfileCard from "../Components/ProfileCard";
+
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -13,10 +15,15 @@ class ProfilesScreen extends Component {
   //   this.state = {}
   // }
 
+  onPrefilePressed = () => {
+    this.props.navigation.navigate("BookingListScreen")
+  };
+
   render () {
     return (
       <ScrollView style={styles.container}>
-        <Text>ProfilesScreen Container</Text>
+        <ProfileCard onPressed={this.onPrefilePressed}></ProfileCard>
+        <ProfileCard onPressed={this.onPrefilePressed}></ProfileCard>
       </ScrollView>
     )
   }

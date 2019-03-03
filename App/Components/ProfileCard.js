@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
 import { View, Text } from 'react-native'
+import { RkText, RkCard, RkButton } from 'react-native-ui-kitten';
 import styles from './Styles/ProfileCardStyle'
 
 export default class ProfileCard extends Component {
@@ -18,7 +19,13 @@ export default class ProfileCard extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text>ProfileCard Component</Text>
+        <RkCard>
+          <RkText>Name</RkText>
+          <RkText>Descripiton</RkText>
+          <RkButton onPress={this.props.onPressed}>
+            Book
+          </RkButton>
+        </RkCard>
       </View>
     )
   }

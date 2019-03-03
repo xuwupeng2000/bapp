@@ -4,7 +4,13 @@ import { Colors, Metrics } from '../../Themes/'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Metrics.navBarHeight,
-    backgroundColor: Colors.background
+    padding: 5,
+    marginTop: Metrics.navBarHeight
+  },
+  fullWidthButton: {
+    width: "100%",
+  },
+  h1: {
+    fontSize: 24
   }
 })

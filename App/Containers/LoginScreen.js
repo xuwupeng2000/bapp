@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
-import { ScrollView, Text } from 'react-native'
+import { View, ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
+import { RkText, RkTextInput, RkButton, RkCard } from 'react-native-ui-kitten';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {styles as s} from "react-native-style-tachyons";
+
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -15,9 +19,16 @@ class LoginScreen extends Component {
 
   render () {
     return (
-      <ScrollView style={styles.container}>
-        <Text>LoginScreen Container</Text>
-      </ScrollView>
+      <RkCard style={styles.container}>
+        <View rkCardHeader>
+          <RkText style={styles.h1}>LoginScreen Container</RkText>
+        </View>
+        <RkTextInput rkType='rounded' placeholder='Email'/>
+        <RkTextInput rkType='rounded' placeholder='Password' secureTextEntry/>
+        <View style={styles.loginButtonWrapper}>
+          <RkButton onPress={() => this.props.navigation.navigate("ProfilesScreen")} style={styles.fullWidthButton}>Login</RkButton>
+        </View>
+      </RkCard>
     )
   }
 }
