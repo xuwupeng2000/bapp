@@ -12,7 +12,9 @@
 
 import { call, put } from 'redux-saga/effects'
 import LoginActions from '../Redux/LoginRedux'
+import BarberActions from '../Redux/BarberRedux'
 import { LoginSelectors } from '../Redux/LoginRedux'
+import { NavigationActions } from 'react-navigation';
 
 export function * doLogin (api, action) {
   const { data } = action
@@ -23,4 +25,9 @@ export function * doLogin (api, action) {
   } else {
     yield put(LoginActions.loginFailure())
   }
+}
+
+export function * doLoginAsGuest (api, action) {
+  yield put(BarberActions.getBarbersRequest());
+  yield put(NavigationActions.navigate({ routeName: 'ProfilesScreen' }));
 }

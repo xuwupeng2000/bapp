@@ -12,6 +12,7 @@
 
 import { call, put } from 'redux-saga/effects'
 import BookingActions from '../Redux/BookingRedux'
+import BarberActions from '../Redux/BarberRedux'
 
 export function * getBookings (api, action) {
   const { data } = action
@@ -42,12 +43,11 @@ export function * addBooking (api, action) {
 }
 
 export function * getBarbers (api, action) {
-  const { data } = action
-  const response = yield call(api.getbookings, data)
+  const response = yield call(api.getBarbers);
 
   if (response.ok) {
-    yield put(BookingActions.getBarbersSuccess(response.data))
+    yield put(BarberActions.getBarbersSuccess(response.data))
   } else {
-    yield put(BookingActions.getBarbarsFailure())
+    yield put(BarberActions.getBarbarsFailure())
   }
 }

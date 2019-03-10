@@ -35,24 +35,24 @@ const create = (baseURL = 'http://localhost:3000/api/v1') => {
   // way at this level.
   //
   // const getUser = (username) => api.get('search/users', {q: username})
-  const getBookings = () => {
-    api.get('booksings');
+  const getBookings = async () => {
+    return await api.get('/booksings');
   }
 
-  const addBooking = () => {
-    api.get('booksings');
+  const addBooking = async () => {
+    return await api.post('/booksings', { booking: {} });
   }
 
-  const getBarbers = () => {
-    api.get('barbers');
+  const getBarbers = async () => {
+    return await api.get('/barbers');
   }
 
-  const loginUser = () => {
-    api.get('barbers');
+  const loginUser = async (data) => {
+    return await api.post('/users/sign_in', { user: {email: data.email, password: data.password} });
   }
 
-  const createUserAccount = () => {
-    api.get('barbers');
+  const createUserAccount = async (data) => {
+    return await api.post('/users/sign_up', { user: { email: data.email, passpass: data.passpass }});
   }
 
   // ------

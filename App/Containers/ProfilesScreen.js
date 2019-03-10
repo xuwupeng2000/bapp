@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import { connect } from 'react-redux'
 import ProfileCard from "../Components/ProfileCard";
 
@@ -10,20 +10,21 @@ import ProfileCard from "../Components/ProfileCard";
 import styles from './Styles/ProfilesScreenStyle'
 
 class ProfilesScreen extends Component {
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {}
-  // }
-
   onPrefilePressed = () => {
     this.props.navigation.navigate("BookingListScreen")
   };
 
   render () {
+    let list;
+    if (this.props.barbers) {
+      list = this.props.barbers.map((barber) => {
+        return <ProfileCard key={barber.id} barber={barber} onPressed={this.onPrefilePressed}></ProfileCard>
+      });
+    }
+
     return (
       <ScrollView style={styles.container}>
-        <ProfileCard onPressed={this.onPrefilePressed}></ProfileCard>
-        <ProfileCard onPressed={this.onPrefilePressed}></ProfileCard>
+        {list}
       </ScrollView>
     )
   }
@@ -31,6 +32,7 @@ class ProfilesScreen extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    barbers: state.barber.data || []
   }
 }
 

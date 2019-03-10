@@ -6,9 +6,12 @@ import ReduxPersist from '../Config/ReduxPersist'
 
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
+  login: require('./LoginRedux').reducer,
+  registration: require('./RegistrationRedux').reducer,
+  booking: require('./BookingRedux').reducer,
+  barber: require('./BarberRedux').reducer,
   nav: require('./NavigationRedux').reducer,
   github: require('./GithubRedux').reducer,
-  search: require('./SearchRedux').reducer
 })
 
 export default () => {

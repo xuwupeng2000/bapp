@@ -12,5 +12,5 @@ export default StyleSheet.create({
   },
   h1: {
     fontSize: 24
-  }
+  },
 })

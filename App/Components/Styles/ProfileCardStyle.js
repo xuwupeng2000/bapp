@@ -7,4 +7,9 @@ export default StyleSheet.create({
   fullWidthButton: {
     width: "100%",
   },
+  avatar: {
+    alignSelf: "center",
+    width: 120,
+    height: 120
+  }
 })

@@ -12,6 +12,8 @@ export default StyleSheet.create({
   },
   fullWidthButton: {
     width: "100%",
+    marginTop: 5,
+    marginBottom: 5,
   },
   h1: {
     fontSize: 24
